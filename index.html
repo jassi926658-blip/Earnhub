@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EarnHub — Earn Money Online</title>
+<meta name="description" content="Discover tasks, referrals and promotional offers in one simple place.">
+<style>
+:root{
+  --bg:#07111f; --card:#0e1b2d; --card2:#12243b; --text:#f5f7fb;
+  --muted:#aab7c8; --accent:#7c5cff; --accent2:#00d4ff; --border:#20334c;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:
+radial-gradient(circle at 20% 0%,#1d2454 0,transparent 32%),var(--bg);color:var(--text);min-height:100vh}
+.container{width:min(1100px,92%);margin:auto}
+header{padding:22px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:22px;font-weight:800}
+.logo span{color:#9a87ff}
+.nav a{color:#dbe4f1;text-decoration:none;margin-left:20px;font-size:14px}
+.hero{text-align:center;padding:72px 0 45px}
+.badge{display:inline-block;padding:7px 12px;border:1px solid #31476a;background:#0d1b30;border-radius:999px;color:#bfcaff;font-size:13px;margin-bottom:18px}
+h1{font-size:clamp(36px,6vw,64px);line-height:1.05;letter-spacing:-2px}
+.gradient{background:linear-gradient(90deg,#fff,#9c8cff,#5ee7ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:680px;margin:20px auto;color:var(--muted);font-size:17px;line-height:1.7}
+.btn{display:inline-block;padding:13px 21px;border-radius:12px;text-decoration:none;font-weight:700;transition:.2s}
+.primary{background:linear-gradient(135deg,var(--accent),#4d8dff);color:#fff;box-shadow:0 10px 30px rgba(124,92,255,.25)}
+.primary:hover{transform:translateY(-2px)}
+section{padding:28px 0 55px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:18px}
+.section-head h2{font-size:28px}
+.section-head p{color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:linear-gradient(180deg,rgba(18,36,59,.95),rgba(11,25,42,.95));border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:0 15px 35px rgba(0,0,0,.18)}
+.offer-top{display:flex;align-items:center;gap:12px;margin-bottom:15px}
+.icon{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;background:#1b2d49;font-size:22px}
+.card h3{font-size:18px}.card p{color:var(--muted);font-size:14px;line-height:1.5;margin:8px 0 16px}
+.reward{font-size:20px;font-weight:800;color:#6ee7b7}
+.offer-btn{display:block;text-align:center;margin-top:14px;padding:11px;border-radius:10px;background:#182b46;color:#fff;text-decoration:none;font-weight:700;border:1px solid #2a4365}
+.offer-btn:hover{background:#203957}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feature{text-align:center;padding:25px 18px}
+.feature .big{font-size:30px;margin-bottom:10px}.feature p{color:var(--muted);line-height:1.6;font-size:14px;margin-top:7px}
+footer{border-top:1px solid rgba(255,255,255,.07);padding:25px 0;color:var(--muted);font-size:13px;text-align:center}
+@media(max-width:800px){.grid,.features{grid-template-columns:1fr}.nav a{display:none}.hero{padding-top:52px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="logo">Earn<span>Hub</span> ⚡</div>
+    <nav><a href="#offers">Offers</a><a href="#why">Why Us</a></nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container">
+    <div class="badge">🚀 New offers added regularly</div>
+    <h1>Earn online with <span class="gradient">simple offers</span></h1>
+    <p>Explore promotional campaigns, app offers and referral opportunities from one clean dashboard. Always check each offer's eligibility and terms before participating.</p>
+    <a class="btn primary" href="#offers">View Live Offers →</a>
+  </div>
+</section>
+
+<section id="offers">
+  <div class="container">
+    <div class="section-head">
+      <div><h2>Active Offers</h2><p>Replace these demo links with your approved campaign URLs.</p></div>
+    </div>
+    <div class="grid" id="offerGrid"></div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="container">
+    <div class="section-head"><div><h2>Why Choose Us?</h2><p>A simple, transparent offer directory.</p></div></div>
+    <div class="features">
+      <div class="card feature"><div class="big">⚡</div><h3>Simple Process</h3><p>Clear steps and direct links make it easy to understand each offer.</p></div>
+      <div class="card feature"><div class="big">💎</div><h3>Clear Rewards</h3><p>Show the reward or payout exactly as provided by the campaign owner.</p></div>
+      <div class="card feature"><div class="big">🔒</div><h3>Transparent</h3><p>Use accurate campaign information and never promise guaranteed earnings.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">© <span id="year"></span> EarnHub. All rights reserved.</div>
+</footer>
+
+<script>
+const offers = [
+  {icon:"📈", name:"Trading App Offer", desc:"Complete the campaign requirements and follow the advertiser's terms.", reward:"Reward: ₹800", url:"#"},
+  {icon:"💳", name:"Finance App Offer", desc:"Promotional app campaign. Eligibility and reward conditions may apply.", reward:"Reward: ₹500", url:"#"},
+  {icon:"🎁", name:"Referral Offer", desc:"Invite eligible users through your referral link and follow the campaign rules.", reward:"Reward: ₹300", url:"#"}
+];
+
+const grid = document.getElementById("offerGrid");
+grid.innerHTML = offers.map(o => `
+  <article class="card">
+    <div class="offer-top">
+      <div class="icon">${o.icon}</div>
+      <div><h3>${o.name}</h3><small style="color:#8292a8">Sponsored campaign</small></div>
+    </div>
+    <p>${o.desc}</p>
+    <div class="reward">${o.reward}</div>
+    <a class="offer-btn" href="${o.url}" target="_blank" rel="noopener noreferrer">View Offer →</a>
+  </article>
+`).join("");
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
